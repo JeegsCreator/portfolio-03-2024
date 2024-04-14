@@ -1,0 +1,117 @@
+---
+import Section from "@layouts/Section.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import SectionGrid from "@components/SectionGrid.astro"
+import CleanYoutube from "@icons/CleanYoutube.astro"
+import Shorts from "@icons/Shorts.astro"
+import Youtube from "@icons/Youtube.astro"
+import SandBox from "@icons/SandBox.astro"
+import TimeZipImg from "@lib/images/projects/timezipbg.webp"
+import StarsImg from "@lib/images/stars_bg.webp"
+import { Image } from "astro:assets"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section id="projects">
+  <header>
+    <h2 class="text-3xl font-bold">{t("projects.title")}</h2>
+  </header>
+  <main class="grid grid-cols-3 h-[320px] gap-4 my-[20px]">
+    <SectionGrid>
+      <a
+        slot="primary"
+        href="https://timezip.vercel.app/"
+        target="_blank"
+        class="group bg-red-500 h-full w-full text-black"
+      >
+        <div class="flex flex-col items-center pt-14 h-full w-full">
+          <h3 class="text-5xl font-black">TimeZip</h3>
+          <p class="text-center mt-2 leading-tight text-pretty px-8">
+            {t("projects.timezip.description")}
+          </p>
+          <!-- <button
+            class="mt-3 text-sm border border-zinc-400 px-2 py-1 rounded-md shadow-md bg-white"
+            >See more</button
+          > -->
+        </div>
+        <picture class="absolute top-0 bottom-0 left-0 right-0 -z-10">
+          <Image
+            src={TimeZipImg}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform origin-center"
+            alt="TimeZip decoration"
+          />
+        </picture>
+      </a>
+      <a
+        slot="secondary"
+        class="bg-[#0a0a0a] h-full w-full block cursor-pointer group bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(120,119,198,0.3),rgba(255,255,255,0))] border border-[#7f7cb8] rounded-lg hover:shadow-innerf transition-shadow hover:border-white"
+        href="https://scroll-view-animation.vercel.app/"
+        target="_blank"
+      >
+        <div class="flex flex-col items-center justify-center h-full w-full">
+          <h3 class="text-2xl font-bold mb-2">
+            {t("projects.plugin.title")}
+          </h3>
+          <!-- <p class="font-light text-sm mt-1 mb-3">
+            Add 'animation-timeline' support to TailwindCSS
+          </p> -->
+          <div
+            class="bg-[#212033] px-3 py-2 rounded-md flex gap-2 items-center"
+          >
+            <span
+              class="text-sm leading-none font-mono"
+              data-svelte-h="svelte-fwhleg"
+              >npm install @jeegscreator/scroll-view-animation</span
+            >
+          </div>
+        </div>
+      </a>
+      <a
+        class="h-full w-full block cursor-pointer group border border-red-600 hover:border-red-400 rounded-lg"
+        href="https://cleanyoutube.vercel.app/"
+        target="_blank"
+        slot="tertiary"
+      >
+        <div class="flex flex-col justify-center h-full gap-2 p-3">
+          <div class="flex gap-1 items-center">
+            <CleanYoutube />
+            <h3 class="text-2xl font-semibold">Clean Youtube</h3>
+          </div>
+          <p class="text-pretty text-sm text-[#FDE8E8] px-4">
+            {t("projects.cleanyoutube.description")}
+          </p>
+        </div>
+        <div
+          class="absolute top-0 bottom-0 left-0 right-0 -z-10 bg-[linear-gradient(0.4turn,#f006,#ff000020)] opacity-65 group-hover:opacity-100 transition-opacity"
+        >
+          <div class="absolute -bottom-5 left-2 opacity-20 blur-sm">
+            <Shorts />
+          </div>
+          <div class="absolute top-1 -right-3 opacity-20 blur-sm">
+            <Youtube />
+          </div>
+        </div>
+      </a>
+      <a
+        aria-disabled="true"
+        class="h-full w-full cursor-not-allowed grid place-content-center grayscale"
+        slot="sandbox"
+      >
+        <div class="opacity-75 flex items-center flex-col">
+          <SandBox />
+          <h3 class="font-semibold text-lg">SandBox</h3>
+          <span class="text-xs font-light"
+            >({t("projects.sandbox.coming")})</span
+          >
+        </div>
+        <picture
+          class="absolute top-0 bottom-0 left-0 right-0 flex justify-center -z-10"
+        >
+          <Image src={StarsImg} alt="stars" class="min-h-full object-cover" />
+        </picture>
+      </a>
+    </SectionGrid>
+  </main>
+</Section>

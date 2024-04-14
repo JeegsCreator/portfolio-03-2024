@@ -1,0 +1,22 @@
+---
+import { cn } from "@lib/classUtils"
+
+interface Props {
+  id?: string
+  foo?: boolean
+}
+
+const { id, foo } = Astro.props
+---
+
+<section
+  class={cn(
+    "flex items-center",
+    foo ? "mt-[calc((65vh-350px)/1.5)] mb-8" : "my-[calc((65vh-350px)/1.5)]"
+  )}
+  id={id}
+>
+  <div class="w-[1000px] mx-auto gap-8 relative">
+    <slot />
+  </div>
+</section>

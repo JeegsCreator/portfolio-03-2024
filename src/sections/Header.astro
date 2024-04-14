@@ -1,0 +1,38 @@
+---
+import Anchor from "@components/Anchor.astro"
+import SelectLang from "@components/SelectLang.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<style>
+  @keyframes header-merge {
+    to {
+      background-color: #0101017e;
+      border-bottom: 1px solid #0038ff;
+      border-inline: 1px solid #0038ff;
+      backdrop-filter: blur(20px);
+    }
+  }
+</style>
+<header class="sticky top-0 flex justify-center z-10">
+  <div
+    id="header"
+    class="py-3 rounded-b-lg px-3 border border-transparent animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
+  >
+    <ul class="flex gap-3 items-center text-sm">
+      <li><Anchor href={`/${lang}#`}>{t("nav.home")}</Anchor></li>
+      <li>
+        <Anchor href={`/${lang}#experience`}>{t("nav.experience")}</Anchor>
+      </li>
+      <li><Anchor href={`/${lang}#projects`}>{t("nav.projects")}</Anchor></li>
+      <li><Anchor href={`/${lang}#about`}>{t("nav.about")}</Anchor></li>
+      <!-- <li><Anchor href={`/${lang}#experience`}>{t("nav.contact")}</Anchor></li> -->
+      <li>
+        <SelectLang />
+      </li>
+    </ul>
+  </div>
+</header>

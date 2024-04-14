@@ -1,0 +1,79 @@
+---
+import Button from "./Button.astro"
+import DobleArrow from "@icons/DobleArrow.astro"
+import Check from "@icons/Check.astro"
+import { getLangFromUrl } from "@i18n/utils.ts"
+
+const selectedLang = getLangFromUrl(Astro.url)
+---
+
+<div id="langwrapper">
+  <Button id="langbutton">
+    <span class="leading-none py-1 px-0">{selectedLang}</span>
+    <DobleArrow />
+  </Button>
+  <dialog id="langdialog">
+    <div
+      id="langcontent"
+      class="bg-zinc-background border border-zinc-border rounded-md text-white top-0"
+    >
+      <a
+        href="/en"
+        class="flex items-center gap-2 px-3 py-2 hover:bg-white/5 cursor-pointer"
+      >
+        <span>en</span>
+        {selectedLang === "en" && <Check />}
+      </a>
+      <a
+        href="/es"
+        class="flex items-center gap-2 px-3 py-2 hover:bg-white/5 cursor-pointer"
+      >
+        <span>es</span>
+        {selectedLang === "es" && <Check />}
+      </a>
+    </div>
+  </dialog>
+</div>
+<style>
+  #langdialog {
+    background-color: transparent;
+    margin: 0;
+    position: absolute;
+  }
+
+  #langdialog::backdrop {
+    background-color: transparent;
+  }
+</style>
+
+<script>
+  const $button = document.getElementById("langbutton")
+  const $content = document.getElementById("langcontent") as HTMLDivElement
+  const $header = document.getElementById("header") as HTMLDivElement
+  const $wrapper = document.getElementById("langwrapper") as HTMLDivElement
+  const $dialog = document.getElementById("langdialog") as HTMLDialogElement
+
+  $button?.addEventListener("click", () => {
+    const scroll = window.scrollY
+    $dialog.showModal()
+    console.log($wrapper.offsetLeft)
+    $dialog.style.left =
+      $wrapper.offsetLeft +
+      $header.offsetLeft -
+      ($content.offsetWidth - $button.offsetWidth) / 2 +
+      "px"
+    $dialog.style.top =
+      $wrapper.offsetTop + scroll + $wrapper.offsetHeight + 8 + "px"
+    window.scrollTo({ top: scroll })
+  })
+
+  window.addEventListener("scroll", e => {
+    if ($dialog.open) {
+      $dialog.style.top =
+        $wrapper.offsetTop + window.scrollY + $wrapper.offsetHeight + 8 + "px"
+    }
+  })
+
+  $dialog.addEventListener("click", () => $dialog.close())
+  $content.addEventListener("click", event => event.stopPropagation())
+</script>

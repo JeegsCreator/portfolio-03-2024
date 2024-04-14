@@ -1,0 +1,25 @@
+---
+import type { ClassValue } from "clsx"
+import { cn } from "@lib/classUtils"
+
+type Props = {
+  className?: ClassValue
+  id?: string
+  variant?: "default" | "ghost"
+}
+
+const { className, id, variant = "default" } = Astro.props
+---
+
+<button
+  id={id}
+  class={cn(
+    "px-3.5 py-1.5 text-sm flex gap-2 items-center",
+    variant === "default" &&
+      "border border-zinc-border rounded-md hover:bg-white/5 hover:border-white/50 transition-colors",
+    variant === "ghost" && "",
+    className
+  )}
+>
+  <slot />
+</button>

@@ -1,0 +1,17 @@
+<div class="rounded-lg overflow-hidden relative">
+  <slot name="primary" />
+</div>
+<div class="col-start-2 col-end-4 grid grid-rows-2 gap-4">
+  <div class="rounded-lg overflow-hidden relative">
+    <slot name="secondary" />
+  </div>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="rounded-lg overflow-hidden relative col-start-1 col-end-3">
+      <slot name="tertiary" />
+    </div>
+    <div class="rounded-lg overflow-hidden relative">
+      <!-- SandBox -->
+      <slot name="sandbox" />
+    </div>
+  </div>
+</div>

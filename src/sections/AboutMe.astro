@@ -1,0 +1,20 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import Section from "@layouts/Section.astro"
+import ExperienceItem from "@components/ExperienceItem.astro"
+import Experiences from "@data/experience"
+import Blub2 from "@components/Deco/Blub2.astro"
+import TEnfasis from "@components/TEnfasis.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section id="about">
+  <header>
+    <h2 class="text-3xl font-bold">{t("aboutme.title")}</h2>
+  </header>
+  <main class="py-6 border-l pl-8 border-zinc-border mt-6">
+    <TEnfasis text={t("aboutme.description")} />
+  </main>
+</Section>

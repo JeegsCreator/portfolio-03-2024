@@ -1,0 +1,50 @@
+---
+import Enfasis from "@components/Enfasis.astro"
+interface Props {
+  text: string
+}
+
+const { text } = Astro.props
+
+function parseLinks(s: string) {
+  const regex = /\[.+\]\(.+\)/g
+  const matches = s.match(regex)
+
+  if (matches) {
+    const splitedString = s.split(regex)
+
+    for (let index = 0; index < matches.length; index++) {
+      const substring = matches[index]
+      const [name, link] = substring.split("](")
+      splitedString.splice(
+        index + 1,
+        0,
+        `<a href="${link.slice(0, -1)}" target="_blank" class="underline">${name.slice(1)}</a>`
+      )
+    }
+
+    return splitedString
+  }
+
+  return s
+}
+---
+
+<div class="space-y-2">
+  {
+    text.split("\n").map(t => (
+      <p>
+        {t.split("*").map((s, i) => {
+          if (i % 2) {
+            return (
+              <Enfasis>
+                <Fragment set:html={parseLinks(s)} />
+              </Enfasis>
+            )
+          }
+          return <Fragment set:html={parseLinks(s)} />
+        })}
+      </p>
+    ))
+  }
+</div>

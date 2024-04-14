@@ -1,0 +1,12 @@
+---
+type Props = {
+  href: string
+  target?: astroHTML.JSX.HTMLAttributeAnchorTarget
+}
+
+const { href, target } = Astro.props
+---
+
+<a href={href} target={target} class="pb-1 px-2">
+  <slot />
+</a>

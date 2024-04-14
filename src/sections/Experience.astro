@@ -1,0 +1,33 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import Section from "@layouts/Section.astro"
+import ExperienceItem from "@components/ExperienceItem.astro"
+import Experiences from "@data/experience"
+import Blub2 from "@components/Deco/Blub2.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section id="experience">
+  <header>
+    <h2 class="text-3xl font-bold">{t("experience.title")}</h2>
+  </header>
+  <main>
+    {
+      Experiences.map(e => (
+        <ExperienceItem
+          companyTitle={e.companyTitle}
+          date={e[lang].date}
+          jobTitle={e[lang].jobTitle}
+          description={e[lang].description}
+        />
+      ))
+    }
+  </main>
+  <div
+    class="size-[400px] absolute top-[30%] right-[-400px] translate-y-[-50%] -z-10 blur-[100px]"
+  >
+    <Blub2 />
+  </div>
+</Section>

@@ -1,0 +1,15 @@
+---
+import TEnfasis from "@components/TEnfasis.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import Section from "@layouts/Section.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section foo>
+  <footer class="text-zinc-500 text-center">
+    <TEnfasis text={t("footer.mention")} />
+  </footer>
+  <!-- <Hero /> -->
+</Section>

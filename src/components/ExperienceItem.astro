@@ -1,0 +1,25 @@
+---
+import TEnfasis from "./TEnfasis.astro"
+
+interface Props {
+  jobTitle: string
+  companyTitle: string
+  date: string
+  description: string
+}
+
+const { jobTitle, companyTitle, date, description } = Astro.props
+---
+
+<article
+  class="grid grid-cols-3 gap-5 py-5 my-[20px] border-l pl-8 border-zinc-border"
+>
+  <div>
+    <h3 class="font-bold text-xl text-blue-text text-balance">{jobTitle}</h3>
+    <span class="block my-1.5">{companyTitle}</span>
+    <span class="text-sm text-zinc-400">{date}</span>
+  </div>
+  <div class="col-start-2 col-end-4">
+    <TEnfasis text={description} />
+  </div>
+</article>

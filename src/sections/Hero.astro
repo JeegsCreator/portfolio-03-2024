@@ -1,0 +1,91 @@
+---
+import Section from "@layouts/Section.astro"
+import Button from "@components/Button.astro"
+import Card from "@components/Card.astro"
+import CardDescription from "@components/CardDescription.astro"
+import TEnfasis from "@components/TEnfasis.astro"
+import Twitter from "@icons/Twitter.astro"
+import LinkedIn from "@icons/LinkedIn.astro"
+import BlueFigma from "@icons/BlueFigma.astro"
+import Mesh from "@icons/Mesh.astro"
+import GoLogo from "@icons/GoLogo.astro"
+import JSLogo from "@icons/JSLogo.astro"
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import Blub from "@components/Deco/Blub.astro"
+import Image from "astro/components/Image.astro"
+import HeroDeco from "@lib/images/decoration.webp"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section>
+  <div class="flex justify-center items-center">
+    <div>
+      <h1 class="text-7xl font-bold">Jeegs</h1>
+      <p class="text-pretty my-4 pl-3 border-l border-zinc-border">
+        <TEnfasis text={t("hero.p")} />
+      </p>
+      <div class="flex gap-2 mt-4">
+        <Button>
+          <Twitter />
+          <span>Twitter</span>
+        </Button>
+        <Button>
+          <LinkedIn />
+          <span>LinkedIn</span>
+        </Button>
+      </div>
+    </div>
+    <div class="flex gap-5 h-[350px] min-w-[450px]">
+      <div class="flex flex-col gap-5 h-full w-1/2">
+        <Card className="bg-gradient-to-t from-blue-deep/20 flex items-end">
+          <picture class="absolute top-0 -z-10">
+            <Image src={HeroDeco} alt="abstract image" />
+          </picture>
+          <CardDescription>
+            <span slot="title">{t("hero.card.lt.title")}</span>
+            <span slot="description">{t("hero.card.lt.description")}</span>
+          </CardDescription>
+        </Card>
+        <Card
+          className="h-[125px] bg-gradient-to-br from-blue-deep/20 flex justify-center gap-5 items-center pr-6"
+        >
+          <GoLogo />
+          <JSLogo />
+        </Card>
+      </div>
+      <div class="flex flex-col gap-5 h-full w-1/2">
+        <Card
+          className="h-[250px] bg-gradient-to-tr from-blue-deep/20 flex items-end"
+        >
+          <CardDescription>
+            <span slot="title">{t("hero.card.rt.title")}</span>
+            <span slot="description">{t("hero.card.rt.description")}</span>
+          </CardDescription>
+          <div class="absolute top-4 right-4 -z-10">
+            <BlueFigma />
+          </div>
+        </Card>
+        <Card className="flex items-end">
+          <CardDescription>
+            <span slot="title">{t("hero.card.rb.title")}</span>
+            <span slot="description">{t("hero.card.rb.description")}</span>
+          </CardDescription>
+          <div class="absolute left-0 bottom-0 right-0 -z-10">
+            <Mesh />
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+  <!-- <picture
+    class="size-[400px] absolute top-[50%] left-[-200px] rounded-full bg-blue-deep translate-y-[-50%] -z-10 blur-[100px] opacity-15"
+  > -->
+  <picture
+    class="size-[400px] absolute top-[30%] left-[-270px] translate-y-[-50%] -z-10 blur-[50px]"
+  >
+    <Blub />
+  </picture>
+</Section>
