@@ -14,7 +14,7 @@ export const ui = {
     "nav.about": "About me",
     "nav.contact": "Contact me",
     "hero.p":
-      "Web *developer* and *designer* based in Colombia. 2+ years building Interactive web apps.",
+      "Web *developer* and *designer* based in Colombia. Building amazing interactive web apps.",
     "hero.card.lt.title": "Fullstack Development",
     "hero.card.lt.description": "Frontend and Backend development.",
     "hero.card.rt.title": "Web Desing",
@@ -42,7 +42,7 @@ export const ui = {
     "nav.about": "Acerca de mí",
     "nav.contact": "Contactame",
     "hero.p":
-      "*Desarrollador* y *Diseñador* Web, viviendo en Colombia. 2+ años construyendo aplicaciones web interactivas.",
+      "*Desarrollador* y *Diseñador* Web, viviendo en Colombia. Creando increibles aplicaciones web interactivas.",
     "hero.card.lt.title": "Desarrollo Fullstack",
     "hero.card.lt.description": "Desarrollo Backend y Frontend.",
     "hero.card.rt.title": "Diseño Web",
