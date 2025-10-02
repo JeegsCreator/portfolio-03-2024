@@ -74,8 +74,8 @@ const selectedLang = getLangFromUrl(Astro.url)
 
   window.addEventListener("scroll", e => {
     if ($dialog.open) {
-      const buttonRect = $button.getBoundingClientRect()
-      $dialog.style.top = buttonRect.bottom + window.scrollY + 8 + "px"
+      const buttonRect = $button?.getBoundingClientRect()
+      $dialog.style.top = (buttonRect?.bottom ?? "0") + String((window.scrollY + 8)) + "px"
     }
   })
 
