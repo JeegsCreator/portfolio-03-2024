@@ -11,10 +11,12 @@ export const ui = {
     "nav.home": "Home",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
-    "nav.about": "About me",
+    "nav.showcase": "Showcase",
     "nav.contact": "Contact me",
+    "hero.webdev": "Web Developer",
+    "hero.designer": "UX/UI Designer",
     "hero.p":
-      "Web *developer* and *designer* based in Colombia. Building amazing interactive web apps.",
+      "I am a *Full-stack developer* focused on *frontend*, creating powerful yet intuitive *web apps*, with proven experience *designing products* and *UI* from scratch. I have also refactored existing applications to improve usability, performance, and *visual appeal* — leading to higher user satisfaction",
     "hero.card.lt.title": "Fullstack Development",
     "hero.card.lt.description": "Frontend and Backend development.",
     "hero.card.rt.title": "Web Desing",
@@ -28,6 +30,8 @@ export const ui = {
     "projects.cleanyoutube.description":
       "Get rid of visual distractions and YouTube Shorts, make the design more minimalist and enjoy YouTube.",
     "projects.sandbox.coming": "Coming Soon",
+    "showcase.title": "Showcase",
+    "showcase.description": "I took ownership of the front-end, and improve it’s UX/UI so it met the requirements and built a new architecture that allows for scalability and maintainable.",
     "aboutme.title": "About Me",
     "aboutme.description": `My name is Jhonn Gutierrez but they call me *Jeegs* both in social media and close friends. 
     \n I'm a *curious* person who loves to learn about different subjects (Illustration, Physics, Mathematics, Sociology, Psychology and Philosophy) and I love to apply all these concepts in programming.
@@ -39,10 +43,12 @@ export const ui = {
     "nav.home": "Home",
     "nav.experience": "Experiencia",
     "nav.projects": "Proyectos",
-    "nav.about": "Acerca de mí",
+    "nav.showcase": "Showcase",
     "nav.contact": "Contactame",
+    "hero.webdev": "Desarrollador Web",
+    "hero.designer": "Diseñador UX/UI",
     "hero.p":
-      "*Desarrollador* y *Diseñador* Web, viviendo en Colombia. Creando increibles aplicaciones web interactivas.",
+      "Soy un desarrollador Full-stack enfocado en frontend, creando aplicaciones web poderosas e intuitivas, con experiencia probada en diseñar productos y UI desde cero. También he refactorizado aplicaciones existentes para mejorar la usabilidad, rendimiento y atractivo visual, lo que ha llevado a una mayor satisfacción del usuario",
     "hero.card.lt.title": "Desarrollo Fullstack",
     "hero.card.lt.description": "Desarrollo Backend y Frontend.",
     "hero.card.rt.title": "Diseño Web",
@@ -57,6 +63,8 @@ export const ui = {
     "projects.cleanyoutube.description":
       "Deshazte de las distracciones y los Shorts, diseño mas minimalista para que disfrutes mas YouTube.",
     "projects.sandbox.coming": "Disponible Pronto",
+    "showcase.title": "Showcase",
+    "showcase.description": "Me encargé del front-end, y lo mejoré para que cumpla con los requisitos y construí una nueva arquitectura que permite la escalabilidad y mantenibilidad.",
     "aboutme.title": "Acerca de mí",
     "aboutme.description": `Mi nombre es Jhonn Gutierrez pero me llaman *Jeegs* tanto en redes como amigos cercanos. 
       \n Soy una persona *curiosa* que le encanta aprender de distintos temas (Ilustracion, Fisica, Matematica, Sociologia, Psicologia y Filosofia) y me encanta aplicar todos estos conceptos en la programacion.

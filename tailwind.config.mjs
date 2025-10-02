@@ -22,7 +22,7 @@ export default {
         },
       },
       fontFamily: {
-        inter: ["Inter", ...defaultTheme.fontFamily.sans],
+        hanken: ["Hanken Grotesk", ...defaultTheme.fontFamily.sans],
       },
     },
   },

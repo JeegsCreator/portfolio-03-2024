@@ -1,0 +1,15 @@
+---
+import Section from "@layouts/Section.astro"
+import CardsData from "@data/card"
+import CardMood from "@components/CardMood.astro"
+---
+
+<Section>
+  <div class="grid grid-cols-3 gap-6">
+    {
+      CardsData.map(card => (
+        <CardMood title={card.en.title} description={card.en.description} />
+      ))
+    }
+  </div>
+</Section>

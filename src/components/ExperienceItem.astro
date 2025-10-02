@@ -1,22 +1,28 @@
 ---
 import TEnfasis from "./TEnfasis.astro"
-
+import { Image } from "astro:assets"
 interface Props {
   jobTitle: string
   companyTitle: string
   date: string
   description: string
+  logo: ImageMetadata
 }
 
-const { jobTitle, companyTitle, date, description } = Astro.props
+const { jobTitle, companyTitle, date, description, logo } = Astro.props
 ---
 
 <article
-  class="grid grid-cols-3 gap-5 py-5 my-[20px] border-l pl-8 border-zinc-border"
+  class="grid grid-cols-3 gap-5 py-5 my-[20px]"
 >
-  <div>
-    <h3 class="font-bold text-xl text-blue-text text-balance">{jobTitle}</h3>
-    <span class="block my-1.5">{companyTitle}</span>
+  <div class="flex items-center gap-6">
+    <picture >
+      <Image src={logo} alt={companyTitle} class="size-[64px] rounded-2xl overflow-hidden shadow-md"/>
+    </picture>
+   <div>
+    <h3 class="font-bold text-xl text-balance leading-snug">{companyTitle}</h3>
+    <span class="block text-zinc-600">{date}</span>
+   </div>
     <!-- <span class="text-sm text-zinc-400">{date}</span> -->
   </div>
   <div class="col-start-2 col-end-4">

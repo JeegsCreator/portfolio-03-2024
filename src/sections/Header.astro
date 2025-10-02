@@ -10,29 +10,32 @@ const t = useTranslations(lang)
 <style>
   @keyframes header-merge {
     to {
-      background-color: #0101017e;
-      border-bottom: 1px solid #0038ff;
-      border-inline: 1px solid #0038ff;
-      backdrop-filter: blur(20px);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      background-color: white;
     }
   }
 </style>
-<header class="sticky top-0 flex justify-center z-10">
+<header
+  class="sticky top-0 flex justify-center z-10 animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
+>
   <div
     id="header"
-    class="py-3 rounded-b-lg px-3 border border-transparent animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
+    class="py-3 rounded-b-lg px-3 border border-transparent flex justify-between w-[900px]"
   >
+    <div>
+      <h1 class="text-xl">Jeegs</h1>
+    </div>
     <ul class="flex gap-3 items-center text-sm">
       <li><Anchor href={`/${lang}#`}>{t("nav.home")}</Anchor></li>
       <li>
         <Anchor href={`/${lang}#experience`}>{t("nav.experience")}</Anchor>
       </li>
+      <li><Anchor href={`/${lang}#showcase`}>{t("nav.showcase")}</Anchor></li>
       <li><Anchor href={`/${lang}#projects`}>{t("nav.projects")}</Anchor></li>
-      <li><Anchor href={`/${lang}#about`}>{t("nav.about")}</Anchor></li>
       <!-- <li><Anchor href={`/${lang}#experience`}>{t("nav.contact")}</Anchor></li> -->
-      <li>
-        <SelectLang />
-      </li>
     </ul>
+    <div>
+      <SelectLang />
+    </div>
   </div>
 </header>

@@ -21,71 +21,13 @@ const t = useTranslations(lang)
 ---
 
 <Section>
-  <div class="flex justify-center items-center">
+  <div class="flex justify-between items-center">
     <div>
-      <h1 class="text-7xl font-bold">Jeegs</h1>
-      <p class="text-pretty my-4 pl-3 border-l border-zinc-border">
-        <TEnfasis text={t("hero.p")} />
-      </p>
-      <div class="flex gap-2 mt-4">
-        <Button>
-          <Twitter />
-          <span>Twitter</span>
-        </Button>
-        <Button>
-          <LinkedIn />
-          <span>LinkedIn</span>
-        </Button>
-      </div>
+      <h1 class="text-6xl text-nowrap font-bold">{t("hero.webdev")}</h1>
+      <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1>
     </div>
-    <div class="flex gap-5 h-[350px] min-w-[450px]">
-      <div class="flex flex-col gap-5 h-full w-1/2">
-        <Card className="bg-gradient-to-t from-blue-deep/20 flex items-end">
-          <picture class="absolute top-0 -z-10">
-            <Image src={HeroDeco} alt="abstract image" />
-          </picture>
-          <CardDescription>
-            <span slot="title">{t("hero.card.lt.title")}</span>
-            <span slot="description">{t("hero.card.lt.description")}</span>
-          </CardDescription>
-        </Card>
-        <Card
-          className="h-[125px] bg-gradient-to-br from-blue-deep/20 flex justify-center gap-5 items-center pr-6"
-        >
-          <GoLogo />
-          <JSLogo />
-        </Card>
-      </div>
-      <div class="flex flex-col gap-5 h-full w-1/2">
-        <Card
-          className="h-[250px] bg-gradient-to-tr from-blue-deep/20 flex items-end"
-        >
-          <CardDescription>
-            <span slot="title">{t("hero.card.rt.title")}</span>
-            <span slot="description">{t("hero.card.rt.description")}</span>
-          </CardDescription>
-          <div class="absolute top-4 right-4 -z-10">
-            <BlueFigma />
-          </div>
-        </Card>
-        <Card className="flex items-end">
-          <CardDescription>
-            <span slot="title">{t("hero.card.rb.title")}</span>
-            <span slot="description">{t("hero.card.rb.description")}</span>
-          </CardDescription>
-          <div class="absolute left-0 bottom-0 right-0 -z-10">
-            <Mesh />
-          </div>
-        </Card>
-      </div>
+    <div class="w-[380px]">
+        <TEnfasis text={t("hero.p")}  />
     </div>
   </div>
-  <!-- <picture
-    class="size-[400px] absolute top-[50%] left-[-200px] rounded-full bg-blue-deep translate-y-[-50%] -z-10 blur-[100px] opacity-15"
-  > -->
-  <picture
-    class="size-[400px] absolute top-[30%] left-[-270px] translate-y-[-50%] -z-10 blur-[50px]"
-  >
-    <Blub />
-  </picture>
 </Section>

@@ -24,9 +24,9 @@ const t = useTranslations(lang)
         slot="primary"
         href="https://timezip.vercel.app/"
         target="_blank"
-        class="group bg-red-500 h-full w-full text-black"
+        class="group h-full w-full text-black block border border-zinc-500 overflow-hidden rounded-lg"
       >
-        <div class="flex flex-col items-center pt-14 h-full w-full">
+        <div class="flex flex-col items-center pt-14 h-full w-full ">
           <h3 class="text-5xl font-black">TimeZip</h3>
           <p class="text-center mt-2 leading-tight text-pretty px-8">
             {t("projects.timezip.description")}
@@ -39,14 +39,14 @@ const t = useTranslations(lang)
         <picture class="absolute top-0 bottom-0 left-0 right-0 -z-10">
           <Image
             src={TimeZipImg}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform origin-center"
+            class="w-full h-full object-cover group-hover:scale-105 transition-[2000ms] origin-center"
             alt="TimeZip decoration"
           />
         </picture>
       </a>
       <a
         slot="secondary"
-        class="bg-[#0a0a0a] h-full w-full block cursor-pointer group bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(120,119,198,0.3),rgba(255,255,255,0))] border border-[#7f7cb8] rounded-lg hover:shadow-innerf transition-shadow hover:border-white"
+        class="bg-[#0a0a0a] dark text-white h-full w-full block cursor-pointer group bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(120,119,198,0.3),rgba(255,255,255,0))] border border-[#7f7cb8] rounded-lg hover:shadow-innerf transition-shadow hover:border-white"
         href="https://scroll-view-animation.vercel.app/"
         target="_blank"
       >
@@ -69,11 +69,12 @@ const t = useTranslations(lang)
         </div>
       </a>
       <a
-        class="h-full w-full block cursor-pointer group border border-red-600 hover:border-red-400 rounded-lg"
+        class="h-full w-full block cursor-pointer relative group border text-white border-red-600 hover:border-red-400 rounded-lg"
         href="https://cleanyoutube.vercel.app/"
         target="_blank"
         slot="tertiary"
       >
+      <div class="bg-black absolute top-0 left-0 right-0 bottom-0 -z-10"></div>
         <div class="flex flex-col justify-center h-full gap-2 p-3">
           <div class="flex gap-1 items-center">
             <CleanYoutube />
@@ -96,7 +97,7 @@ const t = useTranslations(lang)
       </a>
       <a
         aria-disabled="true"
-        class="h-full w-full cursor-not-allowed grid place-content-center grayscale"
+        class="h-full w-full cursor-not-allowed grid place-content-center grayscale text-white"
         slot="sandbox"
       >
         <div class="opacity-75 flex items-center flex-col">

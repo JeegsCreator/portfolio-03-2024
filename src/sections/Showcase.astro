@@ -1,0 +1,56 @@
+---
+import Section from "@layouts/Section.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import SectionGrid from "@components/SectionGrid.astro"
+import CleanYoutube from "@icons/CleanYoutube.astro"
+import Shorts from "@icons/Shorts.astro"
+import Youtube from "@icons/Youtube.astro"
+import SandBox from "@icons/SandBox.astro"
+import TimeZipImg from "@lib/images/projects/timezipbg.webp"
+import StarsImg from "@lib/images/stars_bg.webp"
+import { Image } from "astro:assets"
+import ShowcaseImg from "../../public/images/showcase.jpg"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const technologies = [
+  "Typescript",
+  "React",
+  "Astro",
+  "Next.js",
+  "TailwindCSS",
+  "Supabase"
+]
+---
+
+<Section id="showcase">
+  <header>
+    <h2 class="text-3xl font-bold mb-3">{t("showcase.title")}</h2>
+  </header>
+  <main class="flex items-center justify-center">
+    <button class="relative cursor-zoom-in" onclick="document.getElementById('modal').showModal()">
+      <Image src={ShowcaseImg} alt="Showcase" class="h-[56vh]" />
+    </button>
+
+    <dialog id="modal" class="backdrop:bg-black/50 p- bg-transparent">
+      <form method="dialog" class="relative">
+        <button class="absolute right-4 top-4 text-white bg-black/50 rounded-full w-8 h-8">&times;</button>
+        <Image src={ShowcaseImg} alt="Showcase" class="max-h-[95vh] w-auto bg-white p-4 rounded-lg" />
+      </form>
+    </dialog>
+    <div class="pl-16 space-y-4">
+      <h3 class="text-2xl font-bold">Openversum</h3>
+      <p class="pb-2">
+        {t("showcase.description")}
+      </p>
+      <div class="flex gap-2">
+        {technologies.map(technology => (
+          <span class="block text-zinc-900 border border-zinc-600 rounded-full px-2 py-0.5 shadow-md text-sm">
+            {technology}
+          </span>
+        ))}
+      </div>
+    </div>
+  </main>
+</Section>
