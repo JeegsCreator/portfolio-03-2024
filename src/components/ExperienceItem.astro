@@ -21,11 +21,11 @@ const { jobTitle, companyTitle, date, description, logo } = Astro.props
     </picture>
    <div>
     <h3 class="font-bold text-xl text-balance leading-snug">{companyTitle}</h3>
-    <span class="block text-zinc-600">{date}</span>
+    <span class="block text-zinc-300/80">{date}</span>
    </div>
     <!-- <span class="text-sm text-zinc-400">{date}</span> -->
   </div>
-  <div class="col-start-2 col-end-4">
+  <div class="col-start-2 col-end-4 text-zinc-300/80">
     <TEnfasis text={description} />
   </div>
 </article>

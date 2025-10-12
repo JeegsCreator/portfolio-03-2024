@@ -6,14 +6,17 @@ import AboutMe from "./AboutMe.astro"
 import Showcase from "./Showcase.astro"
 import Footer from "./Footer.astro"
 import Cards from "./Cards.astro"
+import LogosLoop from "./LogosLoop"
 ---
 
-<div>
+
+<div class="pb-[10vh]">
   <Hero />
   <Cards />
   <Experience />
-  <Showcase />
+  <LogosLoop client:load />
   <Projects />
+  <Showcase />
   <!-- <AboutMe /> -->
   <!-- <Footer /> -->
 </div>

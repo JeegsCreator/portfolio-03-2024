@@ -3,13 +3,29 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@sections/*": ["src/sections/*"],
-      "@lib/*": ["src/lib/*"],
-      "@icons/*": ["src/icons/*"],
-      "@i18n/*": ["src/i18n/*"],
-      "@data/*": ["src/data/*"]
-    }
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@sections/*": [
+        "src/sections/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@icons/*": [
+        "src/icons/*"
+      ],
+      "@i18n/*": [
+        "src/i18n/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

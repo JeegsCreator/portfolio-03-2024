@@ -10,24 +10,43 @@ import BlueFigma from "@icons/BlueFigma.astro"
 import Mesh from "@icons/Mesh.astro"
 import GoLogo from "@icons/GoLogo.astro"
 import JSLogo from "@icons/JSLogo.astro"
+import ShinyText from "@components/components/ShinyText"
 
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
 import Blub from "@components/Deco/Blub.astro"
 import Image from "astro/components/Image.astro"
 import HeroDeco from "@lib/images/decoration.webp"
-
+import Threads from "@components/components/Threads"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
+<div class="relative">
+  <div class="absolute top-[-150px] left-0 w-full h-[700px]">
+    <Threads
+    client:load
+    amplitude={1}
+    distance={0}
+    enableMouseInteraction={true}
+  />
+</div>
 <Section>
+  
   <div class="flex lg:justify-between lg:items-center justify-center flex-col lg:flex-row">
     <div>
       <h1 class="text-6xl text-nowrap font-bold">{t("hero.webdev")}</h1>
-      <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1>
+      <!-- <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1> -->
+      <ShinyText 
+        client:load
+        text={t("hero.designer")}
+        speed={3} 
+        className='text-6xl font-bold leading-tight' 
+      />
     </div>
-    <div class="w-[380px]">
+    <div class="w-[380px] text-zinc-300/80">
         <TEnfasis text={t("hero.p")}  />
     </div>
   </div>
 </Section>
+</div>
+

@@ -11,19 +11,20 @@ const t = useTranslations(lang)
   @keyframes header-merge {
     to {
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-      background-color: white;
+      background-color: #10261C88;
+      backdrop-filter: blur(4px) brightness(0.5);
     }
   }
 </style>
 <header
-  class="sticky top-0 flex justify-center z-10 animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
+  class=" top-0 flex justify-center z-10 animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
 >
   <div
     id="header"
     class="py-3 rounded-b-lg px-3 border border-transparent flex justify-between w-[900px]"
   >
     <div>
-      <h1 class="text-xl">Jeegs</h1>
+      <h1 class="text-xl font-semibold">Jeegs</h1>
     </div>
     <ul class="flex gap-3 items-center text-sm">
       <li><Anchor href={`/${lang}#`}>{t("nav.home")}</Anchor></li>

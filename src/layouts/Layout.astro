@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
 import Header from "@sections/Header.astro"
+import "../styles/global.css";
 
 interface Props {
   title: string
@@ -23,9 +24,28 @@ const t = useTranslations(lang)
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>{t("page.title")}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
   </head>
-  <body class="font-hanken overflow-x-hidden">
-    <Header transition:persist />
-    <slot />
+  <body class="font-hanken overflow-x-hidden dark bg-[#080D05]">
+    <div class="relative h-screen">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#10261C,rgba(255,255,255,0))]"></div>
+  </div>
+  
+  <!-- Hero Content -->
+
+<Header transition:persist />
+<slot />
+</div>
   </body>
 </html>

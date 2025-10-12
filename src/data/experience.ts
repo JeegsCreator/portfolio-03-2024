@@ -21,18 +21,19 @@ export default [
     es: {
       date: "Jul 2024 - Presente",
       jobTitle: "Desarrollador Fullstack y Diseñador",
-      description: `Lideré la refactorización de una PWA React mobile-first que permite ventas de productos, órdenes de inventario y recolección de datos, mejorando la confiabilidad y escalabilidad para más de 500 usuarios diarios.
-      \n Equilibré el mantenimiento de sistemas legacy en Svelte mientras construía la nueva aplicación, asegurando cero tiempo de inactividad.
-      \n Me comunico con los fundadores y propongo formas de mejorar y acelerar los procesos de la empresa usando tecnología en cada paso.`,
+      description: `Lideré la refactorización de una *PWA React* mobile-first para ventas, inventario y recolección de datos — mejorando la confiabilidad y escalabilidad para *más de 500 usuarios diarios*.
+Mantuve y migré sistemas heredados de *Svelte + Supabase* con *cero tiempo de inactividad*.
+Definí *contratos de API* entre frontend y backend, asegurando una clara validación e integración de datos.
+Colaboré con los fundadores para *automatizar flujos de trabajo* y mejorar la *eficiencia del desarrollo.*`,
     },
     en: {
       date: "Jul 2024 - Present",
       jobTitle: "Fullstack Developer and Designer",
-      description: ` 
-Led the refactor of a mobile-first React PWA enabling product sales, inventory orders, and data collection, improving reliability and scalability for 500+ daily users. 
-      \n Balanced maintaining legacy systems in Svelte while building the new app, ensuring zero downtime.
-      \n Communicate with the founders and propose ways of improving and speeding up the company's processes using technology in every step.
-`,
+      description: `Led the refactor of a mobile-first *React PWA* for sales, inventory, and data collection — improving reliability and scalability for *500+ daily users*.
+Maintained and migrated legacy **Svelte + Supabase** systems with *zero downtime*.
+Defined frontend–backend *API contracts*, ensuring clear data validation and integration.
+Partnered with founders to *automate workflows* and improve *development efficiency.*`
+
     },
   },
   {
@@ -41,17 +42,18 @@ Led the refactor of a mobile-first React PWA enabling product sales, inventory o
     es: {
       date: "Feb 2023 - Jul 2024",
       jobTitle: "Desarrollador Fullstack y Diseñador",
-      description: `Dirigí la arquitectura frontend (React) para una plataforma de membresías y CRM, asegurando escalabilidad y manejo rápido de datos para más de 1k usuarios activos.
-      \n Lideré un equipo de 3 personas, mentoreando desarrolladores, desglosando requisitos en tareas claras y mejorando la velocidad del equipo en un 20%.
-      \n Diseñé y lancé un flujo de UI/UX intuitivo que redujo la fricción de incorporación y aumentó la adopción de usuarios en un 40%.`,
+      description: `*Dirigí la arquitectura frontend* (React) para una plataforma de membresías y CRM, asegurando escalabilidad y manejo rápido de datos para *más de 1k usuarios activos*.
+*Lideré un equipo de 3 personas*, mentoreando desarrolladores, desglosando requisitos en tareas claras y mejorando la velocidad del equipo en un 20%.
+*Diseñé y lancé* un flujo de UI/UX intuitivo que redujo la fricción de incorporación y aumentó la adopción de usuarios en un 40%.`,
     },
     en: {
       date: "Feb 2023 - Jul 2024",
       jobTitle: "Fullstack Developer and Designer",
-      description: ` 
-Owned the frontend architecture (React) for a membership and CRM platform, ensuring scalability and fast data handling for 1k+ active users.
-      \n Led a 3-person team, mentoring developers, breaking down requirements into clear tasks, and improving team velocity by 20%.
-      \n Designed and shipped an intuitive UI/UX flow that reduced onboarding friction and boosted user adoption by 40%.
+      description: `*Designed and developed* modular *frontend* components and scalable backend services *(React + Go Gin)*.
+*Designed and implemented* secure *REST APIs* and reusable data components, improving scalability and maintainability.
+*Led and mentored a 3-person team*, leading code reviews and implementing modern best practices.
+*Created intuitive UI/UX* flows that reduced onboarding friction and increased user adoption.
+
 `,
     },
   },

@@ -6,10 +6,13 @@ type CardInfo = {
 export type Card = {
   es: CardInfo
   en: CardInfo
+  icon: string
+
 }
 
 export default [
   {
+    icon: "ph ph-sparkle",
     en: {
       title: "Design First",
       description:
@@ -22,18 +25,20 @@ export default [
     },
   },
   {
+    icon: "ph ph-flag",
     en: {
-      title: "Ownership motivated",
+      title: "Proactive \n Ownership",
       description:
         "In any project I try to own it by giving my own input in what should the project be like and try to get to what the client wants.",
     },
     es: {
-      title: "Motivado por propiedad",
+      title: "Motivado por propiedad", 
       description:
         "En cualquier proyecto intento ser dueño de él, dando mi propia entrada en lo que debería ser el proyecto y tratando de llegar a lo que el cliente quiere.",
     },
   },
   {
+    icon: "ph ph-code",
     en: {
       title: "Best Practices",
       description:
