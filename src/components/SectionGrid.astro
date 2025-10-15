@@ -1,15 +1,15 @@
 <div class="rounded-lg overflow-hidden relative">
   <slot name="primary" />
 </div>
-<div class="col-start-2 col-end-4 grid grid-rows-2 gap-4">
+<div class="md:col-start-2 md:col-end-4 row-start-2 row-end-3 md:row-start-1 md:row-end-2 grid grid-rows-2 gap-4">
   <div class="rounded-lg overflow-hidden relative">
     <slot name="secondary" />
   </div>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="block md:grid md:grid-cols-3 gap-4">
     <div class="rounded-lg overflow-hidden relative col-start-1 col-end-3">
       <slot name="tertiary" />
     </div>
-    <div class="rounded-lg overflow-hidden relative">
+    <div class="rounded-lg overflow-hidden relative md:block hidden">
       <!-- SandBox -->
       <slot name="sandbox" />
     </div>

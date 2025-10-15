@@ -22,7 +22,7 @@ const t = useTranslations(lang)
 ---
 
 <div class="relative">
-  <div class="absolute top-[-150px] left-0 w-full h-[700px]">
+  <div class="absolute md:top-[-150px] top-[0px] left-0 w-full h-[700px] -z-10">
     <Threads
     client:load
     amplitude={1}
@@ -32,18 +32,18 @@ const t = useTranslations(lang)
 </div>
 <Section>
   
-  <div class="flex lg:justify-between lg:items-center justify-center flex-col lg:flex-row">
+  <div class="flex lg:justify-between lg:items-center justify-center flex-col lg:flex-row gap-8">
     <div>
-      <h1 class="text-6xl text-nowrap font-bold">{t("hero.webdev")}</h1>
+      <h1 class="md:text-6xl text-4xl text-nowrap font-bold">{t("hero.webdev")}</h1>
       <!-- <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1> -->
       <ShinyText 
         client:load
         text={t("hero.designer")}
         speed={3} 
-        className='text-6xl font-bold leading-tight' 
+        className='md:text-6xl text-4xl font-bold leading-tight' 
       />
     </div>
-    <div class="w-[380px] text-zinc-300/80">
+    <div class="md:w-[380px] w-full text-zinc-300/80 py-6 md:py-0">
         <TEnfasis text={t("hero.p")}  />
     </div>
   </div>

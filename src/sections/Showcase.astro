@@ -28,7 +28,7 @@ const technologies = [
   <header>
     <h2 class="text-3xl font-bold mb-3">{t("showcase.title")}</h2>
   </header>
-  <main class="flex items-center justify-center">
+  <main class="flex flex-col md:flex-row items-center justify-center">
     <button class="relative cursor-zoom-in" onclick="document.getElementById('modal').showModal()">
       <Image src={ShowcaseImg} alt="Showcase" class="h-[56vh] object-scale-down" />
     </button>
@@ -41,12 +41,12 @@ const technologies = [
       </form>
       </div>
     </dialog>
-    <div class="pl-16 space-y-4">
+    <div class="md:pl-16 space-y-4">
       <h3 class="text-2xl font-bold">Openversum</h3>
       <p class="pb-2 text-zinc-300/80">
         {t("showcase.description")}
       </p>
-      <div class="flex gap-2">
+      <div class="flex gap-2 flex-wrap">
         {technologies.map(technology => (
           <span class="block text-zinc-300/80 border  shadow-[#0c1d16] border-zinc-600 rounded-full px-2 py-0.5 shadow-md text-sm">
             {technology}
