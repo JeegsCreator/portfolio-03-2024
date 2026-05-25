@@ -1,0 +1,43 @@
+---
+import TEnfasis from "@components/TEnfasis.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import Section from "@layouts/Section.astro"
+import cube from "@lib/images/hero-cube.png"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<Section>
+  <div class="relative w-full bg-white/[2.5%] not-lg:aspect-4/6">
+    <div class="opacity-50 z-50">
+      <div
+        class="absolute z-20 top-0 left-0 w-full h-full border border-[#ff0000] rounded-xl mix-blend-screen blur-[1px] -translate-[0.7px]"
+      >
+      </div>
+      <div
+        class="absolute z-20 top-0 left-0 w-full h-full border border-[#00ff00] rounded-xl mix-blend-screen blur-[1px]"
+      >
+      </div>
+      <div
+        class="absolute z-20 top-0 left-0 w-full h-full border border-[#0000ff] rounded-xl mix-blend-screen blur-[1px] translate-[0.7px]"
+      >
+      </div>
+    </div>
+    <div class="relative w-full h-full rounded-xl overflow-hidden p-6 lg:p-15">
+      <img
+        src={cube.src}
+        class="absolute lg:top-0 right-0 not-lg:-bottom-1/4 object-cover scale-125 lg:h-full lg:scale-200 -z-10"
+      />
+      <h1 class="text-3xl lg:text-5xl font-bold">
+        <TEnfasis text={t("cta.title")} />
+      </h1>
+      <p class="font-mono mt-4 text-muted-foreground text-pretty">
+        <TEnfasis
+          text={t("cta.description")}
+          className="text-muted-foreground font-mono"
+        />
+      </p>
+    </div>
+  </div>
+</Section>

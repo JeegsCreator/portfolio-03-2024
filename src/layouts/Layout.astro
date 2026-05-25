@@ -1,7 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
 import Header from "@sections/Header.astro"
-import "../styles/global.css";
+import "../styles/global.css"
+import Footer from "@sections/Footer.astro"
 
 interface Props {
   title: string
@@ -19,13 +20,22 @@ const t = useTranslations(lang)
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content="Senior Full-Stack Developer specialized in React, Next.js, and Go. I design and build scalable, high-performance web applications with strong UI/UX focus." />
-    <meta name="keywords" content="Full Stack Developer, React Developer, Next.js, Golang, Supabase, Node.js, UI/UX Designer, Frontend Developer, Backend Developer, Web Developer, PWA Developer, Remote Developer, Senior Software Engineer, Svelte, TypeScript, Tailwind, Colombia Developer, Latin America Tech Talent" />
+    <meta
+      name="description"
+      content="Senior Full-Stack Developer specialized in React, Next.js, and Go. I design and build scalable, high-performance web applications with strong UI/UX focus."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, React Developer, Next.js, Golang, Supabase, Node.js, UI/UX Designer, Frontend Developer, Backend Developer, Web Developer, PWA Developer, Remote Developer, Senior Software Engineer, Svelte, TypeScript, Tailwind, Colombia Developer, Latin America Tech Talent"
+    />
     <meta name="author" content="Jhonn Gutierrez" />
     <meta name="generator" content={Astro.generator} />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Jhonn Gutierrez | Senior Full-Stack Developer</title>
     <link
       rel="stylesheet"
@@ -38,17 +48,18 @@ const t = useTranslations(lang)
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     />
   </head>
-  <body class="font-hanken overflow-x-hidden dark bg-[#080D05]">
-    <div class="relative h-screen">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0">
+  <body class="font-hanken overflow-x-hidden dark bg-background text-foreground"
+    ><div class="h-screen">
+      <!-- Background Pattern -->
+      <!-- <div class="absolute inset-0">
     <div class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#10261C,rgba(255,255,255,0))]"></div>
-  </div>
-  
-  <!-- Hero Content -->
+  </div> -->
 
-<Header transition:persist />
-<slot />
-</div>
+      <!-- Hero Content -->
+
+      <Header transition:persist />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>

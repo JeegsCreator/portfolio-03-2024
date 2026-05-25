@@ -2,9 +2,10 @@
 import Enfasis from "@components/Enfasis.astro"
 interface Props {
   text: string
+  className?: string
 }
 
-const { text } = Astro.props
+const { text, className } = Astro.props
 
 function parseLinks(s: string) {
   const regex = /\[.+\]\(.+\)/g
@@ -19,7 +20,7 @@ function parseLinks(s: string) {
       splitedString.splice(
         index + 1,
         0,
-        `<a href="${link.slice(0, -1)}" target="_blank" class="underline">${name.slice(1)}</a>`
+        `<a href="${link.slice(0, -1)}" target="_blank" class="underline">${name.slice(1)}</a>`,
       )
     }
 
@@ -32,8 +33,8 @@ function parseLinks(s: string) {
 
 <div class="space-y-2">
   {
-    text.split("\n").map(t => (
-      <p>
+    text.split("\n").map((t) => (
+      <p class={`text-pretty ${className}`}>
         {t.split("*").map((s, i) => {
           if (i % 2) {
             return (

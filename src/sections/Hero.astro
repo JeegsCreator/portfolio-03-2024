@@ -15,38 +15,52 @@ import ShinyText from "@components/components/ShinyText"
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
 import Blub from "@components/Deco/Blub.astro"
 import Image from "astro/components/Image.astro"
-import HeroDeco from "@lib/images/decoration.webp"
+import HeroDeco from "@lib/images/hero-cube.png"
 import Threads from "@components/components/Threads"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
 <div class="relative">
-  <div class="absolute md:top-[-150px] top-[0px] left-0 w-full h-[700px] -z-10">
+  <div
+    class="absolute -bottom-[50px] lg:bottom-[-505px] lg:top-[0px] left-0 w-full -z-10"
+  >
     <Threads
-    client:load
-    amplitude={1}
-    distance={0}
-    enableMouseInteraction={true}
-  />
-</div>
-<Section>
-  
-  <div class="flex lg:justify-between lg:items-center justify-center flex-col lg:flex-row gap-8">
-    <div>
-      <h1 class="md:text-6xl text-4xl text-nowrap font-bold">{t("hero.webdev")}</h1>
-      <!-- <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1> -->
-      <ShinyText 
-        client:load
-        text={t("hero.designer")}
-        speed={3} 
-        className='md:text-6xl text-4xl font-bold leading-tight' 
-      />
-    </div>
-    <div class="md:w-[380px] w-full text-zinc-300/80 py-6 md:py-0">
-        <TEnfasis text={t("hero.p")}  />
-    </div>
+      client:load
+      amplitude={1}
+      distance={0}
+      enableMouseInteraction={true}
+    />
   </div>
-</Section>
+  <Section className="pb-[10vh]">
+    <div class="flex gap-4 justify-betweenlg:w-4/5 mx-auto">
+      <div class="flex lg:justify-center flex-col gap-8 lg:w-min">
+        <div>
+          <h1 class="md:text-6xl text-4xl md:text-nowrap font-bold">
+            {t("hero.webdev")}
+          </h1>
+          <!-- <h1 class="text-6xl leading-tight text-nowrap font-bold bg-clip-text text-transparent bg-gradient-to-b from-zinc-800 via-slate-400 to-zinc-700 [text-shadow:_0_1px_1px_rgb(0_0_0_/_10%)]">{t("hero.designer")}</h1> -->
+          <ShinyText
+            client:load
+            text={t("hero.designer")}
+            speed={3}
+            className="md:text-6xl text-4xl font-bold leading-tight"
+          />
+        </div>
+        <div class="w-auto text-muted-foreground font-mono py-6 md:py-0">
+          <TEnfasis text={t("hero.p")} />
+        </div>
+      </div>
+      <div class="lg:flex justify-end hidden">
+        <picture class="relative max-h-[40vh]">
+          <!-- <img
+            src={HeroDeco.src}
+            class="absolute h-full object-cover brightness-200 scale-90 contrast-150 blur-2xl -z-10"
+            alt="hero-cube"
+          /> -->
+          <img src={HeroDeco.src} class="h-full" />
+        </picture>
+      </div>
+    </div>
+  </Section>
 </div>
-

@@ -14,11 +14,18 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Section id="projects">
-  <header>
-    <h2 class="text-3xl font-bold">{t("projects.title")}</h2>
+<Section id="projects" className="max-w-4xl mx-auto">
+  <header class="flex flex-col items-center justify-center mb-8">
+    <h2 class="text-5xl text-center font-bold mb-2">
+      {t("projects.title")}
+    </h2>
+    <span class="font-mono text-muted-foreground"
+      >{t("projects.description")}</span
+    >
   </header>
-  <main class="grid md:grid-cols-3 grid-cols-1 grid-rows-2 md:grid-rows-1 md:h-[320px] gap-4 my-[20px]">
+  <main
+    class="grid md:grid-cols-3 grid-cols-1 grid-rows-2 md:grid-rows-1 md:h-[320px] gap-4"
+  >
     <SectionGrid>
       <a
         slot="primary"
@@ -26,7 +33,7 @@ const t = useTranslations(lang)
         target="_blank"
         class="group h-full w-full text-black block border border-zinc-500 overflow-hidden rounded-lg"
       >
-        <div class="flex flex-col items-center pt-14 h-full w-full ">
+        <div class="flex flex-col items-center pt-14 h-full w-full">
           <h3 class="text-5xl font-black">TimeZip</h3>
           <p class="text-center mt-2 leading-tight text-pretty px-8">
             {t("projects.timezip.description")}
@@ -50,8 +57,12 @@ const t = useTranslations(lang)
         href="https://scroll-view-animation.vercel.app/"
         target="_blank"
       >
-        <div class="flex flex-col items-center justify-center h-full w-full px-6 py-6 gap-2 md:gap-0">
-          <h3 class="md:text-2xl font-bold mb-2 text-xl text-center md:text-left">
+        <div
+          class="flex flex-col items-center justify-center h-full w-full px-6 py-6 gap-2 md:gap-0"
+        >
+          <h3
+            class="md:text-2xl font-bold mb-2 text-xl text-center md:text-left"
+          >
             {t("projects.plugin.title")}
           </h3>
           <!-- <p class="font-light text-sm mt-1 mb-3">
@@ -74,7 +85,8 @@ const t = useTranslations(lang)
         target="_blank"
         slot="tertiary"
       >
-      <div class="bg-black absolute top-0 left-0 right-0 bottom-0 -z-10"></div>
+        <div class="bg-black absolute top-0 left-0 right-0 bottom-0 -z-10">
+        </div>
         <div class="flex flex-col justify-center h-full gap-2 p-3">
           <div class="flex gap-1 items-center">
             <CleanYoutube />

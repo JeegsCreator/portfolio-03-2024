@@ -1,0 +1,42 @@
+---
+import { Content, getHeadings } from "@data/openversum_es.md"
+import Layout from "@layouts/Layout.astro"
+
+const headings = getHeadings()
+---
+
+<Layout title={headings[0].text}>
+  <div class="container mx-auto flex gap-8 pt-20 not-lg:px-8">
+    <div class="flex-1 flex justify-center">
+      <div
+        class="prose dark:prose-invert
+  prose-headings:font-bold prose-h1:text-4xl
+  prose-h2:text-3xl prose-h3:text-3xl prose-h3:font-semibold
+  prose-a:text-white prose-p:text-pretty prose-img:rounded-xl"
+      >
+        <Content />
+      </div>
+    </div>
+    <nav class="top-10 hidden lg:block sticky flex-none max-w-sm h-min">
+      <h2 class="font-bold text-xl mb-4">Table of Contents</h2>
+      <ul class="space-y-3">
+        {
+          headings.map((heading) => (
+            <li class="w-full flex flex-nowrap ">
+              <a
+                href={`#${heading.slug}`}
+                class="text-muted-foreground text-sm hover:text-primary text-nowrap overflow-hidden text-ellipsis"
+                title={heading.text}
+              >
+                {Array.from({ length: heading.depth - 1 }).map(() => (
+                  <span class="opacity-0 h-0">----</span>
+                ))}
+                {heading.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</Layout>

@@ -7,16 +7,19 @@ import Showcase from "./Showcase.astro"
 import Footer from "./Footer.astro"
 import Cards from "./Cards.astro"
 import LogosLoop from "./LogosLoop"
+import Section from "@layouts/Section.astro"
+import CTA from "./CTA.astro"
 ---
 
-
-<div class="pb-[10vh]">
+<div>
   <Hero />
-  <Cards />
-  <Experience />
+  <!-- <div class="container flex flex-col lg:flex-row mx-auto gap-12"> -->
+  <Showcase />
   <LogosLoop client:load />
   <Projects />
-  <Showcase />
+  <CTA />
+  <!-- </div> -->
+  <!-- <Cards /> -->
+  <!-- <Experience /> -->
   <!-- <AboutMe /> -->
-  <!-- <Footer /> -->
 </div>

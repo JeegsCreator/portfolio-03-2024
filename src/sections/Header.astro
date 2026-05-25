@@ -2,6 +2,7 @@
 import Anchor from "@components/Anchor.astro"
 import SelectLang from "@components/SelectLang.astro"
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import { SiGithub, SiLinkedin } from "react-icons/si"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -11,31 +12,38 @@ const t = useTranslations(lang)
   @keyframes header-merge {
     to {
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-      background-color: #10261C88;
+      background-color: #10261c88;
       backdrop-filter: blur(4px) brightness(0.5);
     }
   }
 </style>
-<header
-  class=" top-0 flex justify-center z-10 animation-timeline-scroll animate-[header-merge] animation-range-e-sm"
->
+<header class="top-0 flex justify-center">
   <div
     id="header"
-    class="py-3 rounded-b-lg px-3 border border-transparent flex justify-between w-[900px]"
+    class="py-3 md:py-5 rounded-b-lg border border-transparent flex justify-center lg:justify-between gap-6 container"
   >
-    <div>
-      <h1 class="text-xl font-semibold">Jeegs</h1>
-    </div>
-    <ul class="md:flex gap-3 items-center text-sm hidden">
+    <a href={`/${lang}`} class="text-xl font-mono hidden lg:block"
+      >J. Gutierrez</a
+    >
+    <ul class="md:flex gap-3 items-center text- font-mono hidden">
       <li><Anchor href={`/${lang}#`}>{t("nav.home")}</Anchor></li>
       <li>
-        <Anchor href={`/${lang}#experience`}>{t("nav.experience")}</Anchor>
+        <!-- <Anchor href={`/${lang}#experience`}>{t("nav.experience")}</Anchor> -->
       </li>
-      <li><Anchor href={`/${lang}#showcase`}>{t("nav.showcase")}</Anchor></li>
+      <li><Anchor href={`/${lang}#case-study`}>{t("nav.showcase")}</Anchor></li>
       <li><Anchor href={`/${lang}#projects`}>{t("nav.projects")}</Anchor></li>
       <!-- <li><Anchor href={`/${lang}#experience`}>{t("nav.contact")}</Anchor></li> -->
     </ul>
-    <div>
+    <div class="flex gap-5 items-center">
+      <a href="https://github.com/JeegsCreator" target="_blank">
+        <span class="hidden">Github</span>
+        <SiGithub size={20} />
+      </a>
+      <!-- Linkedin -->
+      <a href="https://www.linkedin.com/in/jhonngutierrez/" target="_blank">
+        <span class="hidden">Linkedin</span>
+        <SiLinkedin size={20} />
+      </a>
       <SelectLang />
     </div>
   </div>

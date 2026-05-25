@@ -10,6 +10,8 @@ import TimeZipImg from "@lib/images/projects/timezipbg.webp"
 import StarsImg from "@lib/images/stars_bg.webp"
 import { Image } from "astro:assets"
 import ShowcaseImg from "../../public/images/showcase.jpg"
+import ov from "@lib/images/openversum-case-study.png"
+import { ArrowUpRight } from "lucide-react"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -20,39 +22,56 @@ const technologies = [
   "Astro",
   "Next.js",
   "TailwindCSS",
-  "Supabase"
+  "Supabase",
 ]
 ---
 
-<Section id="showcase">
-  <header>
-    <h2 class="text-3xl font-bold mb-3">{t("showcase.title")}</h2>
+<Section id="case-study">
+  <header class="flex flex-col items-center justify-center mb-8">
+    <h2 class="text-5xl text-center font-bold mb-2">
+      {t("showcase.title")}
+    </h2>
+    <span class="text-center font-mono text-muted-foreground"
+      >{t("showcase.description")}</span
+    >
   </header>
   <main class="flex flex-col md:flex-row items-center justify-center">
-    <button class="relative cursor-zoom-in" onclick="document.getElementById('modal').showModal()">
-      <Image src={ShowcaseImg} alt="Showcase" class="h-[56vh] object-scale-down" />
-    </button>
-
-    <dialog id="modal" class="backdrop:bg-black/50 w-screen h-screen bg-transparent">
-      <div class="flex items-center justify-center ">
-       <form method="dialog" class="relative">
-        <button class="absolute right-4 top-4 text-white  bg-black/50 rounded-full w-8 h-8">&times;</button>
-        <Image src={ShowcaseImg} alt="Showcase" class="max-h-[95vh] w-auto bg-white p-4 rounded-lg object-scale-down" />
-      </form>
-      </div>
-    </dialog>
-    <div class="md:pl-16 space-y-4">
-      <h3 class="text-2xl font-bold">Openversum</h3>
-      <p class="pb-2 text-zinc-300/80">
-        {t("showcase.description")}
-      </p>
-      <div class="flex gap-2 flex-wrap">
-        {technologies.map(technology => (
-          <span class="block text-zinc-300/80 border  shadow-[#0c1d16] border-zinc-600 rounded-full px-2 py-0.5 shadow-md text-sm">
-            {technology}
-          </span>
-        ))}
-      </div>
-    </div>
+    <article class="max-w-xl md:max-h-[320px] flex flex-col">
+      <a
+        href={`/${lang}/story/openversum`}
+        class="relative aspect-7/5 lg:aspect-video max-w-xl w-full rounded-xl overflow-hidden border border-zinc-800"
+      >
+        <div
+          class="absolute z-50 bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 px-4 pb-5 min-h-3/5 flex flex-col justify-end via-80% via-black/80 to-transparent"
+        >
+          <div>
+            <div>
+              <!-- tags: Product Development, UI/UX, Design System -->
+              <div class="flex gap-2 mb-1">
+                {
+                  ["Product Development", "UI/UX", "Design System"].map((t) => (
+                    <span class="text-nowrap bg-background/70 text-xs text-muted-foreground border border-zinc-800 shadow-md rounded-full py-1 px-2 leading-none font-mono">
+                      {t}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+            <div class="flex gap-2 items-center pl-1.5">
+              <h3 class="font-bold text-lg lg:text-xl">
+                {t("openversum.title")}
+              </h3>
+              <ArrowUpRight size={28} />
+            </div>
+          </div>
+          <p
+            class="text-pretty text-card-foreground text-ellipsis line-clamp-2 px-2 leading-tight mt-1 font-mono"
+          >
+            {t("openversum.description")}
+          </p>
+        </div>
+        <img src={ov.src} alt="" class="-z-10" />
+      </a>
+    </article>
   </main>
 </Section>
